@@ -123,7 +123,7 @@
 		</div>
 		
 		<ul class="navbar_menu">
-			<li><a href="">page1</a></li>
+			<li><a href="${appRoot }/page/1">page1</a></li>
 			<li><a href="">page2</a></li>
 			<li><a href="">page3</a></li>
 			<li><a href="">page4</a></li>

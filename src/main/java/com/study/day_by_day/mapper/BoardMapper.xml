@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.study.day_by_day.mapper.BoardMapper">
+	<insert id="insert">
+		INSERT INTO page1
+		(content, name)
+		VALUES
+		(#{content}, #{name})
+	</insert>
+	
+	<select id="getList" resultType="com.study.day_by_day.domain.Page1">
+		SELECT * FROM page1
+	</select>
+</mapper>
