@@ -68,4 +68,18 @@ public class LoginController {
 		System.out.println(vo.getName());
 		return "redirect:/page/1";
 	}
+	
+	@RequestMapping(value = "/page/2", method = RequestMethod.GET)
+	public ModelAndView page2(ModelAndView mav) {
+		mav.setViewName("/page2");
+		
+		return mav;
+	}
+	
+	@RequestMapping(value = "/page/3", method = RequestMethod.GET)
+	public ModelAndView page3(ModelAndView mav) {
+		mav.setViewName("/page3");
+		
+		return mav;
+	}
 }

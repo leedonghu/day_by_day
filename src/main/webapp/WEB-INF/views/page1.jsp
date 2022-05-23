@@ -92,7 +92,7 @@
 		text-align: left;
 	}
 	
-	.board_list .top .content{
+	.board_list .content{
 		text-align: center;
 	}
 	

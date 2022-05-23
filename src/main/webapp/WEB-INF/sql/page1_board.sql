@@ -1,0 +1,12 @@
+use dbd;
+CREATE TABLE page1
+(
+id INT PRIMARY KEY AUTO_INCREMENT,
+content VARCHAR(1000),
+name VARCHAR(50)
+);
+
+SELECT * from page1;
+
+DELETE FROM page1
+WHERE id = 8;
