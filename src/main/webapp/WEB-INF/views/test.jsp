@@ -14,8 +14,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="container">
-	success
-</div>
+
 </body>
 </html>
