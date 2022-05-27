@@ -14,4 +14,9 @@
 	<select id="getList" resultType="com.study.day_by_day.domain.Page1">
 		SELECT * FROM page1
 	</select>
+	
+	<delete id="delete">
+		DELETE FROM page1
+		WHERE content = #{content} and name = #{name}
+	</delete>
 </mapper>

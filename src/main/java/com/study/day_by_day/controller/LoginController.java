@@ -69,6 +69,12 @@ public class LoginController {
 		return "redirect:/page/1";
 	}
 	
+	@RequestMapping(value = "/page/1/delete", method = RequestMethod.GET)
+	public String page1Delete(Page1 vo) {
+		bService.delete(vo);
+		return "redirect:/page/1";
+	}
+	
 	@RequestMapping(value = "/page/2", method = RequestMethod.GET)
 	public ModelAndView page2(ModelAndView mav) {
 		mav.setViewName("/page2");
@@ -82,4 +88,5 @@ public class LoginController {
 		
 		return mav;
 	}
+	
 }

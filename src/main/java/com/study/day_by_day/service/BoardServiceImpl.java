@@ -26,4 +26,10 @@ public class BoardServiceImpl implements BoardService {
 		return list;
 	}
 
+	@Override
+	public void delete(Page1 vo) {
+		mapper.delete(vo);
+		
+	}
+
 }

@@ -13,4 +13,6 @@ public interface BoardMapper {
 
 	List<Page1> getList();
 
+	void delete(Page1 vo);
+
 }

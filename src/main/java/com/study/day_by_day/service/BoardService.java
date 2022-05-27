@@ -10,4 +10,6 @@ public interface BoardService {
 
 	List<Page1> getList();
 
+	void delete(Page1 vo);
+
 }

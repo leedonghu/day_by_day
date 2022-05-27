@@ -60,6 +60,8 @@
 		color: #fff;
 	}
 	
+	
+	
 	.board_list{
 		width: 100%;
 		border-top: 2px solid #000;
@@ -88,7 +90,7 @@
 	}
 	
 	.board_list .content{
-		width: 50%;
+		width: 40%;
 		text-align: left;
 	}
 	
@@ -98,6 +100,10 @@
 	
 	.board_list .id{
 		width: 20%;
+	}
+	
+	.board_list .remove{
+		width: 10%;
 	}
 	
 	.board_page{
@@ -138,7 +144,7 @@
 	}
 </style>
 
-
+<script src="https://kit.fontawesome.com/1a3214f3e3.js" crossorigin="anonymous"></script>
 <title>page1</title>
 </head>
 <body>
@@ -153,14 +159,22 @@
 					<div class="num">번호</div>
 					<div class="content">내용</div>
 					<div class="id">id</div>
+					<div class="remove"></div>
 				</div>
-				<div>
-					<c:forEach items="${list }" var="i" varStatus="status">
-						<div class="num">${status.index +1 }</div>
-						<div class="content">${i.content }</div>
-						<div class="id">${i.name }</div>
-					</c:forEach>
-				</div>
+				<c:forEach items="${list }" var="i" varStatus="status">
+					<div>
+						
+							<div class="num">${status.index +1 }</div>
+							<div class="content">${i.content }</div>
+							<div class="id">${i.name }</div>
+							<div class="remove">
+								<button style="background: red; color: white;" id="btn ${status.index+1 }" class="removeBtn" type="button">
+									<i class="fa-solid fa-x"></i>
+								</button>
+							</div>
+						
+					</div>
+				</c:forEach>
 			</div>
 			
 			<div class="board_page">
@@ -183,5 +197,31 @@
 			</div>
 		</div>
 	</div>
+	<div hidden="hidden">
+		<form action="${appRoot }/page/1/delete" method="get" id="removeForm">
+			<input value="" name="content" id="removeContent">
+			<input value="" name="name" id="removeName">
+		</form>
+	</div>
 </body>
+<script type="text/javascript">
+
+	let removeBtn = document.querySelectorAll(".removeBtn");
+	console.log("a");
+	console.log(removeBtn.length);
+	let removeBtnClick = function () {
+		let content = this.parentNode.parentNode.children[1].innerText;
+		let name = this.parentNode.parentNode.children[2].innerText;
+		//console.log(content);
+		//console.log(name);
+		document.querySelector("#removeContent").value = content;
+		document.querySelector("#removeName").value = name;
+		
+		document.querySelector("#removeForm").submit();
+	};
+	for(let i=0; i<removeBtn.length; i++){
+		
+		removeBtn[i].addEventListener("click", removeBtnClick);
+	}
+</script>
 </html>
