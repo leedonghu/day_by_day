@@ -1,6 +1,7 @@
 package com.study.day_by_day.controller;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -13,10 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.study.day_by_day.domain.MelonVO;
 import com.study.day_by_day.domain.Page1;
 import com.study.day_by_day.domain.TestVO;
 import com.study.day_by_day.service.BoardService;
 import com.study.day_by_day.service.LoginService;
+import com.study.day_by_day.service.MelonService;
 
 
 @Controller
@@ -29,6 +32,9 @@ public class LoginController {
 	
 	@Autowired
 	private BoardService bService;
+	
+	@Autowired
+	private MelonService mService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView loginPage(ModelAndView mav, Locale locale) {
@@ -86,6 +92,14 @@ public class LoginController {
 	public ModelAndView page3(ModelAndView mav) {
 		mav.setViewName("/page3");
 		
+		return mav;
+	}
+	
+	@RequestMapping(value = "/page/4", method = RequestMethod.GET)
+	public ModelAndView page4(ModelAndView mav) {
+		mav.setViewName("/page4");
+		ArrayList<MelonVO> mc = mService.getMelonChart();
+		mav.addObject("melon", mc);
 		return mav;
 	}
 	
