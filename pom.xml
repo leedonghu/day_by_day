@@ -182,12 +182,16 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-		
+		<dependency>
+     	 	<groupId>org.springframework</groupId>
+	  		<artifactId>spring-test</artifactId>
+	  		<version>${org.springframework-version}</version>
+   	 	</dependency>
 		<dependency>
 		  <!-- jsoup HTML parser library @ https://jsoup.org/ -->
 		  <groupId>org.jsoup</groupId>
 		  <artifactId>jsoup</artifactId>
-		  <version>1.11.3</version>
+		  <version>1.15.1</version>
 		</dependency>        
 	</dependencies>
     <build>

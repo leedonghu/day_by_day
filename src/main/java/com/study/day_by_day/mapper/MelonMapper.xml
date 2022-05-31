@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.study.day_by_day.mapper.MelonMapper">
+	
+	
+	<insert id="insertChart">
+		INSERT INTO melondb
+		(ranking, name, artist, album)
+		VALUES
+		(#{rank}, #{name}, #{artist}, #{album})
+	</insert>
+	
+	<update id="updateChart">
+		UPDATE melondb
+		SET name = #{name},
+			artist = #{artist},
+			album = #{album}
+		WHERE ranking = #{rank}
+	</update>
+</mapper>

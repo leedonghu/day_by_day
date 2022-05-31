@@ -25,29 +25,29 @@ public class CrawlingDAO {
 			e.printStackTrace();
 		}
 		
-		Elements nameElement = doc.getElementsByClass("ellipsis.rank01");
-		System.out.println(nameElement.size());
-		Elements artistElement = doc.select("tr.1st50").select("div.ellipsis.rank02").select("a");
-		System.out.println(artistElement.size());
-		Elements albumElement = doc.select("tr.1st50").select("div.ellipsis.rank03").select("a");
-		System.out.println(albumElement.size());
-		Elements rankElement = doc.select("tr.1st50").select("div.wrap.t_center").select("span.rank");
+		Elements nameElement = doc.select("div.ellipsis.rank01>span>a");
+		Elements artistElement = doc.select("div.ellipsis.rank02>span");
+		
+		Elements albumElement = doc.select("div.ellipsis.rank03>a");
+		
+		Elements rankElement = doc.select("td>div.wrap.t_center>span.rank");
 		System.out.println(rankElement.size());
-//		for(int i=0; i<50; i++) {
-//			
-//			name = nameElement.get(i).text();
-//			
-//			
-//			artist = artistElement.get(i).text();
-//			
-//			
-//			album = albumElement.get(i).text();
-//			
-//			
-//			rank = Integer.parseInt(rankElement.get(i).text());
-//			
-//			mc.add(new MelonVO(rank, name, artist, album));
-//		}
+		for(int i=0; i<100; i++) {
+			
+			name = nameElement.get(i).text();
+//			System.out.println(name);
+			
+			artist = artistElement.get(i).text();
+//			System.out.println(artist);
+			
+			album = albumElement.get(i).text();
+//			System.out.println(album);
+			
+			rank = Integer.parseInt(rankElement.get(i).text());
+//			System.out.println(rank);
+//			System.out.println("================================");
+			mc.add(new MelonVO(rank, name, artist, album));
+		}
 //		
 //		nameElement = doc.select("tr.1st100").select("div.ellipsis.rank01").select("span").select("a");
 //		artistElement = doc.select("tr.1st100").select("div.ellipsis.rank02").select("a");

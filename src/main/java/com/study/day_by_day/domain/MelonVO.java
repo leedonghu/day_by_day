@@ -9,6 +9,10 @@ public class MelonVO {
 	private String artist;
 	private String album;
 	
+	public MelonVO() {
+		
+	}
+	
 	public MelonVO(int rank, String name, String artist, String album) {
 		this.rank = rank;
 		this.name = name;
