@@ -22,11 +22,7 @@ public class MelonServiceImpl implements MelonService {
 		ArrayList<MelonVO> mc = cdao.Crawling();
 		
 		
-		for(MelonVO mvo : mc) {
-					
-			mapper.insertChart(mvo);
-			
-		}
+		
 		
 
 		
