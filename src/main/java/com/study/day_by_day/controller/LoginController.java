@@ -103,4 +103,10 @@ public class LoginController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/page/5", method = RequestMethod.GET)
+	public ModelAndView page5(ModelAndView mav) {
+		mav.setViewName("/page5");
+		return mav;
+	}
+	
 }
